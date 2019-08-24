@@ -8,6 +8,6 @@ import retrofit2.http.Query;
 
 //todo 10 panggil api
 public interface ApiService {
-    @GET("city?key=428ff8d9782be1b3721ec552cbf56827")
-    Call<ResponseCity> getCity();
+    @GET("city")
+    Call<ResponseCity> getCity(@Query("key") String key);
 }

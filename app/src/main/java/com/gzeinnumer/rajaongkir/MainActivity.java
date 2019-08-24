@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     //todo 12
     List<ResultsItem> list;
+    String KEY = "YOUR_KEY_HERE";
 
     //todo 17 biarkan merah
     private AdapterCity adapter;
@@ -48,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
     //todo 14
     private void loadDataCity() {
         Toast.makeText(this, "load data", Toast.LENGTH_SHORT).show();
-        RetroServer.getInstance().getCity().enqueue(new Callback<ResponseCity>() {
+        RetroServer.getInstance().getCity(KEY).enqueue(new Callback<ResponseCity>() {
             @Override
             public void onResponse(Call<ResponseCity> call, Response<ResponseCity> response) {
                 if(response.isSuccessful()){
